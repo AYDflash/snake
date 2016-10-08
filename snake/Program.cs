@@ -10,21 +10,20 @@ namespace snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(10, 10, 'x');
-            Point p2 = new Point(20, 20, 'x');
-            Point p3 = new Point(10, 20, 'x');
-            Point p4 = new Point(20, 10, 'x');
-            
-            List<Point> pointList = new List<Point>();
-            pointList.Add(p1);
-            pointList.Add(p2);
-            pointList.Add(p3);
-            pointList.Add(p4);
-
-            foreach (Point p in pointList) {
-                p.Draw();
-            }
+            DrawField();
             Console.ReadLine();
+        }
+
+        private static void DrawField()
+        {
+            HorizontalLine lineTop = new HorizontalLine(0, 110, 0, '+');
+            lineTop.Draw();
+            HorizontalLine lineBottom = new HorizontalLine(0, 110, 25, '+');
+            lineBottom.Draw();
+            VerticalLine lineLeft = new VerticalLine(0, 25, 0, '+');
+            lineLeft.Draw();
+            VerticalLine lineRight = new VerticalLine(0, 25, 110, '+');
+            lineRight.Draw();
         }
     }
 }
