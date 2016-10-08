@@ -32,15 +32,15 @@ namespace snake
             {
                 x = x + offset;
             }
-            if (direction == Direction.Left)
+            else if (direction == Direction.Left)
             {
                 x = x - offset;
             }
-            if (direction == Direction.Up)
+            else if (direction == Direction.Up)
             {
                 y = y - offset;
             }
-            if (direction == Direction.Down)
+            else if (direction == Direction.Down)
             {
                 y = y + offset;
             }
@@ -48,6 +48,12 @@ namespace snake
         public void Draw() {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+
+        internal void Clear()
+        {
+            sym = ' ';
+            Draw();
         }
     }
 }
