@@ -10,19 +10,28 @@ namespace snake
     {
         static void Main(string[] args)
         {
+            //Window size
+            //Width = 120
+            //Height = 30
+            Console.SetBufferSize(120, 30);
+
             DrawField();
+
+            Point p = new Point(10, 5, '*');
+            Snake snake = new Snake(p, 5, Direction.Left);
+            snake.Draw();
             Console.ReadLine();
         }
 
         private static void DrawField()
         {
-            HorizontalLine lineTop = new HorizontalLine(0, 110, 0, '+');
+            HorizontalLine lineTop = new HorizontalLine(2, 118, 0, '+');
             lineTop.Draw();
-            HorizontalLine lineBottom = new HorizontalLine(0, 110, 25, '+');
+            HorizontalLine lineBottom = new HorizontalLine(2, 118, 29, '+');
             lineBottom.Draw();
-            VerticalLine lineLeft = new VerticalLine(0, 25, 0, '+');
+            VerticalLine lineLeft = new VerticalLine(0, 29, 2, '+');
             lineLeft.Draw();
-            VerticalLine lineRight = new VerticalLine(0, 25, 110, '+');
+            VerticalLine lineRight = new VerticalLine(0, 29, 118, '+');
             lineRight.Draw();
         }
     }
