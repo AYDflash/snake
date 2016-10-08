@@ -15,21 +15,22 @@ namespace snake
             //Width = 120
             //Height = 30
             Console.SetBufferSize(120, 30);
-
             DrawField();
 
             Point p = new Point(10, 5, '*');
-            Snake snake = new Snake(p, 5, Direction.Right);
-            snake.Draw();
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            Console.ReadLine();
+            Snake snake = new Snake(p, 4, Direction.Right);
+
+            while (true) 
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.Handl(key.Key);
+                }
+                Thread.Sleep(100);
+                snake.Move();
+                
+            }
         }
 
         private static void DrawField()

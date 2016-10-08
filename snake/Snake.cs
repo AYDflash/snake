@@ -39,8 +39,13 @@ namespace snake
             Point nextPoint = new Point(head);
             nextPoint.Move(1, direction);
             return nextPoint;
+        }
 
-
+        public void Handl(ConsoleKey key) {
+            if (key == ConsoleKey.LeftArrow) direction = Direction.Left;
+            else if (key == ConsoleKey.RightArrow) direction = Direction.Right;
+            else if (key == ConsoleKey.UpArrow) direction = Direction.Up;
+            else if (key == ConsoleKey.DownArrow) direction = Direction.Down;
         }
     }
 }
